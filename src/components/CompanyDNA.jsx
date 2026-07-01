@@ -1,19 +1,20 @@
-import { PanelHeader } from './TelemetrySupervisor.jsx';
-
-const dna = [
-  ['Brand', 82], ['Pricing', 58], ['Audience', 72], ['Product', 66], ['Support', 79], ['Culture', 74]
-];
+import { dna } from '../core/telemetry.js';
+import { ProjectionLabel } from './ProjectionLabel.jsx';
 
 export default function CompanyDNA() {
   return (
     <section className="glassPanel dnaPanel">
-      <PanelHeader eyebrow="Company DNA" title="Structural strands of recovery" />
-      <div className="dnaHelix">
-        {dna.map(([label, value], i) => (
-          <div className="dnaRung" key={label} style={{ '--i': i }}>
-            <span>{label}</span>
-            <div><i style={{ width: `${value}%` }} /></div>
-            <strong>{value}</strong>
+      <ProjectionLabel kicker="Structure" title="Company DNA">
+        The structural strands that determine Peloton's ability to recover.
+      </ProjectionLabel>
+      <div className="helixShell">
+        <div className="helixSpine spineA" />
+        <div className="helixSpine spineB" />
+        {dna.map((row, i) => (
+          <div className="dnaRung" key={row.label} style={{ '--score': `${row.score}%`, '--offset': `${i % 2 ? 12 : -12}px` }}>
+            <span>{row.label}</span>
+            <div><i /></div>
+            <strong>{row.score}</strong>
           </div>
         ))}
       </div>

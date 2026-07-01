@@ -1,36 +1,32 @@
 import Background from './components/Background.jsx';
+import NavigationRail from './components/NavigationRail.jsx';
 import MarketTicker from './components/MarketTicker.jsx';
 import CompanyCore from './components/CompanyCore.jsx';
+import CompanyDNA from './components/CompanyDNA.jsx';
+import ExecutiveIntelligence from './components/ExecutiveIntelligence.jsx';
 import TelemetrySupervisor from './components/TelemetrySupervisor.jsx';
 import ConfidenceRiver from './components/ConfidenceRiver.jsx';
 import RecoveryHorizon from './components/RecoveryHorizon.jsx';
 import OpportunityGalaxy from './components/OpportunityGalaxy.jsx';
-import CompanyDNA from './components/CompanyDNA.jsx';
-import ExecutiveIntelligence from './components/ExecutiveIntelligence.jsx';
+import CompanyWeather from './components/CompanyWeather.jsx';
 import './styles.css';
 
 export default function App() {
   return (
     <main className="appShell">
       <Background />
-      <aside className="navRail">
-        <div className="brandMark">R</div>
-        <a className="active">Pulse</a>
-        <a>Signals</a>
-        <a>Core</a>
-        <a>Horizon</a>
-        <a>Board</a>
-      </aside>
+      <NavigationRail />
 
       <section className="contentSurface">
         <header className="topBar">
           <div>
-            <span className="eyebrow">ReCentre OS</span>
-            <h1>The Operating System for Company Recovery</h1>
+            <span className="eyebrow">Project Aurora / ReCentre OS</span>
+            <h1>Recover. Rebuild. ReCentre.</h1>
+            <p>Peloton recovery intelligence, visualised as a living company system.</p>
           </div>
           <div className="topActions">
             <button>Peloton Focus</button>
-            <button className="primaryButton small">Run Supervisor</button>
+            <button className="primaryButton">Run Supervisor</button>
           </div>
         </header>
 
@@ -45,6 +41,7 @@ export default function App() {
         <div className="midGrid">
           <TelemetrySupervisor />
           <ConfidenceRiver />
+          <CompanyWeather />
         </div>
 
         <div className="lowerGrid">

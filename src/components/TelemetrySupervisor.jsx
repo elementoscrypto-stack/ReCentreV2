@@ -1,46 +1,33 @@
-import { peloton, formulas } from '../core/telemetry.js';
+import { supervisorRules } from '../core/telemetry.js';
+import { ProjectionLabel } from './ProjectionLabel.jsx';
 
 export default function TelemetrySupervisor() {
   return (
     <section className="glassPanel supervisorPanel">
-      <PanelHeader eyebrow="Telemetry Supervisor" title="Supervising De-Markation + Category Recovery" />
+      <ProjectionLabel kicker="Telemetry Supervisor" title="Signal Brain">
+        The supervisor watches every signal, decides when de-markation is required, and routes the company toward recategorization.
+      </ProjectionLabel>
       <div className="supervisorStatus">
-        <div>
-          <span>Supervisor</span>
-          <strong>ACTIVE</strong>
-        </div>
-        <div>
-          <span>Signals</span>
-          <strong>127</strong>
-        </div>
-        <div>
-          <span>Priority</span>
-          <strong>HIGH</strong>
-        </div>
+        <div><span>Monitoring</span><strong>127 Signals</strong></div>
+        <div><span>Priority</span><strong>High</strong></div>
+        <div><span>Engines</span><strong>Active</strong></div>
       </div>
       <div className="supervisorList">
-        {peloton.supervisor.map((item) => (
-          <div className="supervisorRow" key={item.label}>
+        {supervisorRules.map((rule) => (
+          <div className="supervisorRow" key={rule.trigger}>
             <div>
-              <strong>{item.label}</strong>
-              <span>{item.status}</span>
+              <strong>{rule.trigger}</strong>
+              <span>{rule.action}</span>
             </div>
-            <code>{item.signal}</code>
+            <code>{rule.outcome}</code>
           </div>
         ))}
       </div>
       <div className="formulaStack">
-        {formulas.slice(0, 4).map((f) => <span key={f}>{f}</span>)}
+        <span>DRIFT + LOSS = DE-MARKATION</span>
+        <span>TRUST + BUILD = CATEGORY STABILITY</span>
+        <span>CENTRE + GAIN = RECOVERY CONFIRMED</span>
       </div>
     </section>
-  );
-}
-
-export function PanelHeader({ eyebrow, title }) {
-  return (
-    <header className="panelHeader">
-      <span>{eyebrow}</span>
-      <h2>{title}</h2>
-    </header>
   );
 }

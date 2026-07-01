@@ -1,13 +1,24 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#04070D" />
-    <title>ReCentre OS — Company Pulse</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+# ReCentre Visual Insanity Bundle
+
+A full deployable React + Vite ReCentre build focused on the Project Aurora visual direction.
+
+## Vercel settings
+
+- Framework Preset: Vite
+- Install Command: npm install
+- Build Command: npm run build
+- Output Directory: dist
+- Root Directory: .
+
+## Local run
+
+```bash
+npm install
+npm run dev
+```
+
+## Build test
+
+```bash
+npm run build
+```
