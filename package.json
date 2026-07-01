@@ -1,1 +1,57 @@
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(38px,6vw,88px);line-height:.85;letter-spacing:-.07em}h2{font-size:clamp(24px,3vw,42px);letter-spacing:-.045em}h3{font-size:22px;letter-spacing:-.035em}.muted{color:var(--muted);line-height:1.6}.section-kicker{text-transform:uppercase;letter-spacing:.22em;color:var(--cyan);font-size:11px;font-weight:900;margin-bottom:10px}.projection-label span{font-size:11px;letter-spacing:.2em;color:var(--cyan);text-transform:uppercase}.projection-label p{color:var(--muted)}
+import Background from './components/Background.jsx';
+import MarketTicker from './components/MarketTicker.jsx';
+import CompanyCore from './components/CompanyCore.jsx';
+import TelemetrySupervisor from './components/TelemetrySupervisor.jsx';
+import ConfidenceRiver from './components/ConfidenceRiver.jsx';
+import RecoveryHorizon from './components/RecoveryHorizon.jsx';
+import OpportunityGalaxy from './components/OpportunityGalaxy.jsx';
+import CompanyDNA from './components/CompanyDNA.jsx';
+import ExecutiveIntelligence from './components/ExecutiveIntelligence.jsx';
+import './styles.css';
+
+export default function App() {
+  return (
+    <main className="appShell">
+      <Background />
+      <aside className="navRail">
+        <div className="brandMark">R</div>
+        <a className="active">Pulse</a>
+        <a>Signals</a>
+        <a>Core</a>
+        <a>Horizon</a>
+        <a>Board</a>
+      </aside>
+
+      <section className="contentSurface">
+        <header className="topBar">
+          <div>
+            <span className="eyebrow">ReCentre OS</span>
+            <h1>The Operating System for Company Recovery</h1>
+          </div>
+          <div className="topActions">
+            <button>Peloton Focus</button>
+            <button className="primaryButton small">Run Supervisor</button>
+          </div>
+        </header>
+
+        <MarketTicker />
+
+        <div className="heroGrid">
+          <CompanyDNA />
+          <CompanyCore />
+          <ExecutiveIntelligence />
+        </div>
+
+        <div className="midGrid">
+          <TelemetrySupervisor />
+          <ConfidenceRiver />
+        </div>
+
+        <div className="lowerGrid">
+          <RecoveryHorizon />
+          <OpportunityGalaxy />
+        </div>
+      </section>
+    </main>
+  );
+}
