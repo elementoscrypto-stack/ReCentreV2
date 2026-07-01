@@ -1,2 +1,11 @@
-import { recoveryActions } from '../../core/telemetry/RecoveryPhysics';
-export default function DecisionLedger(){return <div className="decision-ledger"><h3>Decision Ledger</h3>{recoveryActions.map(a=><div className="ledger-row" key={a.name}><b>{a.name}</b><span>{a.signal}</span><em>{a.impact}</em><small>{a.confidence}</small></div>)}</div>}
+const items = ['Pulse', 'Signals', 'Core', 'Horizon', 'Board'];
+
+export default function NavigationRail() {
+  return (
+    <aside className="navRail">
+      <div className="brandMark"><span>R</span></div>
+      {items.map((item, index) => <a key={item} className={index === 0 ? 'active' : ''}>{item}</a>)}
+      <div className="railGlow" />
+    </aside>
+  );
+}

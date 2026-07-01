@@ -1,24 +1,21 @@
-import { peloton } from '../core/telemetry.js';
-import { PanelHeader } from './TelemetrySupervisor.jsx';
-
-const opportunities = [
-  ['Pricing', '+8 Trust', 35, 38],
-  ['AI Coach', '+7 Growth', 66, 30],
-  ['Family', '+9 Lock', 72, 67],
-  ['Retail', '+6 Buy', 28, 70],
-  ['Corporate', '+5 Flow', 52, 82]
-];
+import { opportunities } from '../core/telemetry.js';
+import { ProjectionLabel } from './ProjectionLabel.jsx';
 
 export default function OpportunityGalaxy() {
   return (
     <section className="glassPanel galaxyPanel">
-      <PanelHeader eyebrow="Opportunity Galaxy" title="Recovery moves orbiting Peloton" />
+      <ProjectionLabel kicker="Recovery Constellation" title="Opportunity Galaxy">
+        Highest-potential recovery moves orbiting Peloton right now.
+      </ProjectionLabel>
       <div className="galaxyCanvas">
-        <div className="galaxyCenter">{peloton.name}</div>
-        {opportunities.map(([name, impact, x, y], i) => (
-          <div className="planet" key={name} style={{ left: `${x}%`, top: `${y}%`, animationDelay: `${i * .35}s` }}>
-            <strong>{name}</strong>
-            <span>{impact}</span>
+        <div className="galaxyOrbit orbitA" />
+        <div className="galaxyOrbit orbitB" />
+        <div className="galaxyOrbit orbitC" />
+        <div className="galaxyCenter">Level 5</div>
+        {opportunities.map((planet, i) => (
+          <div className="planet" key={planet.name} style={{ left: `${planet.x}%`, top: `${planet.y}%`, animationDelay: `${i * -0.5}s` }}>
+            <strong>{planet.name}</strong>
+            <span>{planet.gain} Recovery</span>
           </div>
         ))}
       </div>

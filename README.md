@@ -1,19 +1,13 @@
-# ReCentre OS
-
-A deployable React + Vite prototype for ReCentre — the Operating System for Company Recovery.
-
-## Vercel Settings
-
-- Framework Preset: Vite
-- Root Directory: `.`
-- Install Command: `npm install`
-- Build Command: `npm run build`
-- Output Directory: `dist`
-- Development Command: `npm run dev`
-
-## Local Run
-
-```bash
-npm install
-npm run dev
-```
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#04070D" />
+    <title>ReCentre OS — Company Pulse</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

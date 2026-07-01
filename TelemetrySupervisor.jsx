@@ -1,23 +1,23 @@
-export default function Background() {
+import { dna } from '../core/telemetry.js';
+import { ProjectionLabel } from './ProjectionLabel.jsx';
+
+export default function CompanyDNA() {
   return (
-    <div className="environment" aria-hidden="true">
-      <div className="gridHorizon" />
-      <div className="nebula nebulaA" />
-      <div className="nebula nebulaB" />
-      <div className="nebula nebulaC" />
-      <div className="noise" />
-      {Array.from({ length: 34 }).map((_, i) => (
-        <span
-          className="ambientParticle"
-          key={i}
-          style={{
-            left: `${(i * 19) % 100}%`,
-            top: `${(i * 31) % 100}%`,
-            animationDelay: `${(i % 10) * 0.35}s`,
-            animationDuration: `${9 + (i % 8)}s`
-          }}
-        />
-      ))}
-    </div>
+    <section className="glassPanel dnaPanel">
+      <ProjectionLabel kicker="Structure" title="Company DNA">
+        The structural strands that determine Peloton's ability to recover.
+      </ProjectionLabel>
+      <div className="helixShell">
+        <div className="helixSpine spineA" />
+        <div className="helixSpine spineB" />
+        {dna.map((row, i) => (
+          <div className="dnaRung" key={row.label} style={{ '--score': `${row.score}%`, '--offset': `${i % 2 ? 12 : -12}px` }}>
+            <span>{row.label}</span>
+            <div><i /></div>
+            <strong>{row.score}</strong>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }

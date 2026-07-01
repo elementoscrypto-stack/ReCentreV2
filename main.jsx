@@ -1,20 +1,18 @@
-import { peloton } from '../core/telemetry.js';
-import { PanelHeader } from './TelemetrySupervisor.jsx';
+import { company } from '../core/telemetry.js';
+import { ProjectionLabel } from './ProjectionLabel.jsx';
 
-export default function ExecutiveIntelligence() {
+export default function CompanyWeather() {
   return (
-    <section className="glassPanel executivePanel">
-      <PanelHeader eyebrow="Executive Intelligence" title="Today's highest-impact recovery move" />
-      <div className="aiThesis">
-        <span>Board memo</span>
-        <p>{peloton.thesis}</p>
+    <section className="glassPanel weatherPanel">
+      <ProjectionLabel kicker="Company Weather" title={company.weather}>
+        The atmosphere of the recovery mission shifts as signals strengthen or weaken.
+      </ProjectionLabel>
+      <div className="weatherOrb"><span>84%</span><em>Recovery Probability</em></div>
+      <div className="weatherRows">
+        <div><span>Atmosphere</span><strong>Clear Recovery</strong></div>
+        <div><span>Pressure</span><strong>Competitor Drift</strong></div>
+        <div><span>Outlook</span><strong>Level 5 Possible</strong></div>
       </div>
-      <div className="aiStats">
-        <div><span>Expected Trust Gain</span><strong>+11</strong></div>
-        <div><span>Recovery Confidence</span><strong>{peloton.recoveryProbability}%</strong></div>
-        <div><span>Risk</span><strong>Low</strong></div>
-      </div>
-      <button className="primaryButton">Generate Board Report</button>
     </section>
   );
 }
