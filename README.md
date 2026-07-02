@@ -1,24 +1,9 @@
-# ReCentre Visual Insanity Bundle
+# ReCentre OS - Image Match Build
 
-A full deployable React + Vite ReCentre build focused on the Project Aurora visual direction.
+Deployable Vite React bundle inspired by the latest ReCentre concept image.
 
-## Vercel settings
-
-- Framework Preset: Vite
-- Install Command: npm install
-- Build Command: npm run build
-- Output Directory: dist
-- Root Directory: .
-
-## Local run
-
-```bash
-npm install
-npm run dev
-```
-
-## Build test
-
-```bash
-npm run build
-```
+## Vercel
+- Framework: Vite
+- Install: npm install
+- Build: npm run build
+- Output: dist
